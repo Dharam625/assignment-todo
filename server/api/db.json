@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "description": "Attend meeting",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "description": "peer review",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "description": "code",
+      "completed": false
+    }
+  ]
+}

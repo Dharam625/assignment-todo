@@ -1,0 +1,11 @@
+<div layout="column" layout-margin layout-padding>
+  <form [formGroup]="todoForm" layout="column" layout-fill layout-padding
+        layout-margin
+        style="margin-top: 20px; margin-left: 30%; margin-right: 30%; width: 40%; text-align: center;">
+    <md-input type="text" required formControlName="description" maxlength="50" placeholder="Write Todo Description"
+              class="form-control" [(ngModel)]="todo.description"></md-input> {{todo}}
+    <button md-raised-button class="md-primary" aria-label="Add Todo" (click)="addTodo()" [disabled]="!todoForm.valid">
+      Save
+    </button>
+  </form>
+</div>

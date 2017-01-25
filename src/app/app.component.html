@@ -1,0 +1,41 @@
+<div id="container">
+  <header id="header">
+    <md-toolbar color="primary">
+      <h3><span class="md-title">ToDo Application</span></h3>
+      <span class="example-fill-remaining-space"></span>
+
+      <button md-icon-button [md-menu-trigger-for]="menu">
+        <md-icon class="md-18 account-icon">account_circle</md-icon>
+      </button>
+
+      <md-menu x-position="before" #menu="mdMenu">
+        <button md-menu-item disabled> Sign Out</button>
+      </md-menu>
+    </md-toolbar>
+
+    <nav md-tab-nav-bar>
+      <a md-tab-link [routerLink]=" ['./todos'] " routerLinkActive #todoLink="routerLinkActive"
+         [active]="todoLink.isActive">
+        Todos
+      </a>
+
+      <a md-tab-link [routerLink]=" ['./add-todo'] " routerLinkActive #addTodoLink="routerLinkActive"
+         [active]="addTodoLink.isActive">
+        Add Todo
+      </a>
+    </nav>
+  </header>
+
+  <main layout="row" flex id="body">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer id="footer">
+    <md-toolbar color="primary">
+      <span class="example-fill-remaining-space"></span>
+      <a [routerLink]=" ['./contactMe'] " style="font-size: 14px; cursor: pointer;color: currentColor;padding: 0 12px;">
+        Contact Me
+      </a>
+    </md-toolbar>
+  </footer>
+</div>

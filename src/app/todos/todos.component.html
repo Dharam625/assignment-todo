@@ -1,0 +1,11 @@
+<md-list>
+  <md-list-item *ngFor="let todo of todos">
+    <md-checkbox [checked]="todo.completed"
+                 (click)="changeTodo(todo)">
+      {{todo.description}}
+    </md-checkbox>
+    <button md-icon-button (click)="removeTodo(todo)">
+      <md-icon class="md-16 clear">clear</md-icon>
+    </button>
+  </md-list-item>
+</md-list>
