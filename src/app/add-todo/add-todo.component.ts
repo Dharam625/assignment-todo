@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Todo} from "../models/todo";
 import {TodoService} from "../services/todo.service";
 import {FormGroup, Validators, FormBuilder} from "@angular/forms";
@@ -9,7 +9,7 @@ import {FormGroup, Validators, FormBuilder} from "@angular/forms";
   templateUrl: './add-todo.component.html',
   providers: [TodoService]
 })
-export class AddTodoComponent {
+export class AddTodoComponent implements OnInit {
   private todoForm: FormGroup;
 
   todo: Todo = new Todo();
@@ -23,7 +23,7 @@ export class AddTodoComponent {
 
   ngOnInit() {
     this.todoForm = this.fb.group({
-      todo: ['', [Validators.required, Validators.maxLength(20)]]
+      description: ['', [Validators.required, Validators.maxLength(20)]]
     });
   }
 }
